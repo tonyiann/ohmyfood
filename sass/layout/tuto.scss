@@ -1,11 +1,30 @@
+@use  "../utils/zoom.scss"
+@use "../utils/box-shadows.scss";
+
 .tuto {
+    counter-reset: steps;
     & ol {
         display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        @media (max-width: 800px) {
+            flex-direction: column ;
+        }
     }
     & li {
+        &::before{
+            content: "counter(steps)";
+            counter-increment: "";
+        }
+        list-style-type: none ;
         background-color: #f6f6f6;
         padding: 1 rem 2rem;
         border: 1px solid red;
         flex-grow: 1;
+        border-radius: 1rem;
+        @include box-shadow.base-shadow;
+        &:hover {
+            @include zoom.transform-zoom;
+        }
     }
 }

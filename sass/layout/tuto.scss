@@ -1,5 +1,9 @@
-@use  "../utils/zoom.scss"
+@use  "../utils/zoom.scss";
 @use "../utils/box-shadows.scss";
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+
+$tuto-bullet-height: 1rem;
 
 .tuto {
     counter-reset: steps;
@@ -7,24 +11,40 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             flex-direction: column ;
         }
     }
     & li {
         &::before{
             content: "counter(steps)";
-            counter-increment: "";
+            counter-increment: steps;
+            color: white;
+            background-color: purple;
+            width: 2 rem;
+            height: 2 rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left:-1rem;
+            transform: translateY(-50%)
         }
         list-style-type: none ;
         background-color: #f6f6f6;
-        padding: 1 rem 2rem;
+        padding: 1.5rem 2rem;
         border: 1px solid red;
         flex-grow: 1;
         border-radius: 1rem;
-        @include box-shadow.base-shadow;
+        @include box-shadows.base-shadow;
         &:hover {
             @include zoom.transform-zoom;
+        }
+        & i.fas {
+            margin-right: 1rem;
+            color: colors.$lightgrey;
+            font-size: 1.5rem;
         }
     }
 }

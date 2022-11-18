@@ -1,17 +1,143 @@
-/* Error: expected ";".
- *   ,
- * 1 | @use  "./sass/base.scss"
- *   |                         ^
- *   '
- *   style.scss 1:25  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a   \2577 \a 1 \2502  @use  "./sass/base.scss"\d\a   \2502                          ^\a   \2575 \a   style.scss 1:25  root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
+*,
+::before,
+::after {
+  box-sizing: boder-box;
 }
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans serif;
+}
+
+main {
+  padding: 0 1 rem;
+}
+
+header {
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  padding: 0.3rem;
+  margin: 0;
+  position: relative;
+}
+
+.city {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 0.5rem;
+}
+.city i {
+  font-size: 1.5rem;
+}
+
+.explorer {
+  text-align: center;
+}
+.explorer h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.explorer p {
+  font-size: 1rem;
+}
+.explorer button {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  transition: transform 200ms;
+  margin-top: 1rem;
+  box-shadow: 2px 1px 16px -3px #000000;
+}
+.explorerbutton:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.tuto {
+  counter-reset: steps;
+}
+.tuto ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .tuto ol {
+    flex-direction: column;
+  }
+}
+.tuto li {
+  list-style-type: none;
+  background-color: #f6f6f6;
+  padding: 1.5rem 2rem;
+  border: 1px solid red;
+  flex-grow: 1;
+  border-radius: 1rem;
+  box-shadow: 2px 1px 16px -3px #000000;
+}
+.tuto li::before {
+  content: "counter(steps)";
+  counter-increment: steps;
+  color: white;
+  background-color: purple;
+  width: 2 rem;
+  height: 2 rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  transform: translateY(-50%);
+}
+.tuto li:hover {
+  transform: scale(1.02);
+}
+.tuto li i.fas {
+  margin-right: 1rem;
+  color: #7e7e7e;
+  font-size: 1.5rem;
+}
+
+.menus {
+  background-color: #f6f6f6;
+}
+.menus h2 {
+  margin-bottom: 2rem;
+}
+.menus .menus__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.menus .card__image {
+  background-image: url("../../images/logo/ohmyfood.png");
+  height: 15rem;
+  border-radius: 1rem;
+  background-size: cover;
+}
+.menus .card__image-1 {
+  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.menus .card__image-2 {
+  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.menus .card__image-3 {
+  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.menus .card__image-4 {
+  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+/*# sourceMappingURL=style.css.map */

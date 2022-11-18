@@ -1,0 +1,11 @@
+.tuto {
+    & ol {
+        display: flex;
+    }
+    & li {
+        background-color: #f6f6f6;
+        padding: 1 rem 2rem;
+        border: 1px solid red;
+        flex-grow: 1;
+    }
+}

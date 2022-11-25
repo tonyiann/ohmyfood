@@ -1,0 +1,19 @@
+@use "../utils/colors.scss";
+
+footer {
+    background-color: #353535;
+    padding: 1rem 2rem;
+    padding-left: 1.5rem;
+}
+footer h2 {
+    font-family: "Shrikhand";
+    font-weight: 500;
+    color: white;
+}
+footer p {
+    padding: 0.2rem;
+    color: white;
+}
+img {
+    max-width: 100%;
+}

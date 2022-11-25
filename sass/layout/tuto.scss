@@ -1,11 +1,11 @@
-@use  "../utils/zoom.scss";
-@use "../utils/box-shadows.scss";
+@use "../utils/mixins";
 @use "../utils/variables.scss";
 @use "../utils/colors.scss";
 
 
 .tuto {
     counter-reset: steps;
+    margin-bottom: 2rem;
     & ol {
         display: flex;
         flex-wrap: wrap;
@@ -16,31 +16,34 @@
     }
     & li {
         position: relative;
+        left: -25px;
         &::before {
             content: counter(steps);
             counter-increment: steps;
             color: white;
             background-color: colors.$purple;
-            width: 2 * variables.$tuto-bullet-height;
-            height: 2 * variables.$tuto-bullet-height;
+            width: 27px;
+            height: 27px;
             display: grid;
             place-items: center;
             border-radius: 50%;
             position: absolute;
             top: 50%;
             left:- variables.$tuto-bullet-height;
-            transform: translateY(-50%)
+            transform: translateY(-45%);
         }
         list-style-type: none ;
         background-color: #f6f6f6;
-        margin-right: 20px;
+        margin-right: -25px;
+        margin-top: 15px;
         padding: 1.5rem 2rem;
-        border: 1px solid red;
+        border: none;
+
         flex-grow: 1;
         border-radius: 1rem;
-        @include box-shadows.base-shadow;
+        @include mixins.base-shadow-1;
         &:hover {
-            @include zoom.transform-zoom;
+            @include mixins.transform-zoom;
         }
         & i.fas {
             margin-right: 1rem;
@@ -48,4 +51,9 @@
             font-size: 1.5rem;
         }
     }
+}
+.fonctionnement {
+    margin-top: 30px;
+    margin-bottom: -5px;
+
 }

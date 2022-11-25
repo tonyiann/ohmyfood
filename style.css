@@ -3,7 +3,7 @@
 *,
 ::before,
 ::after {
-  box-sizing: boder-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,7 +12,28 @@ body {
 }
 
 main {
-  padding: 0 1 rem;
+  padding-bottom: 50px;
+  padding: 0 7rem;
+  background-color: #fafafa;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 0 1rem;
+  }
+}
+
+h2 {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+h3, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
@@ -25,16 +46,19 @@ header {
 }
 
 .city {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   gap: 1rem;
   background-color: #f3f3f3;
   text-align: center;
-  padding: 0.5rem;
+  padding: 1rem;
+  font-size: 15px;
+  margin-right: -16px;
+  margin-left: -16px;
 }
 .city i {
-  font-size: 1.5rem;
+  font-size: 20px;
 }
 
 .explorer {
@@ -54,18 +78,20 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 200ms;
   margin-top: 1rem;
   box-shadow: 2px 1px 16px -3px #000000;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 .explorerbutton:hover {
   transform: scale(1.02);
   opacity: 0.9;
+  cursor: pointer;
 }
 
 .tuto {
   counter-reset: steps;
+  margin-bottom: 2rem;
 }
 .tuto ol {
   display: flex;
@@ -79,29 +105,31 @@ header {
 }
 .tuto li {
   position: relative;
+  left: -25px;
   list-style-type: none;
   background-color: #f6f6f6;
-  margin-right: 20px;
+  margin-right: -25px;
+  margin-top: 15px;
   padding: 1.5rem 2rem;
-  border: 1px solid red;
+  border: none;
   flex-grow: 1;
   border-radius: 1rem;
-  box-shadow: 2px 1px 16px -3px #000000;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
 }
 .tuto li::before {
   content: counter(steps);
   counter-increment: steps;
   color: white;
   background-color: #9356dc;
-  width: 2rem;
-  height: 2rem;
+  width: 27px;
+  height: 27px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: -1rem;
-  transform: translateY(-50%);
+  transform: translateY(-45%);
 }
 .tuto li:hover {
   transform: scale(1.02);
@@ -110,6 +138,11 @@ header {
   margin-right: 1rem;
   color: #7e7e7e;
   font-size: 1.5rem;
+}
+
+.fonctionnement {
+  margin-top: 30px;
+  margin-bottom: -5px;
 }
 
 .menus {
@@ -128,23 +161,89 @@ header {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.menus .card__image {
-  background-image: url("../../images/logo/ohmyfood.png");
+.menus .menus__cards .new {
+  position: relative;
+}
+.menus .menus__cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  color: #1b6150;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+.menus .card .card__image {
+  border-radius: 1rem 1rem 0 0;
   height: 15rem;
-  border-radius: 1rem;
   background-size: cover;
 }
 .menus .card__image-1 {
-  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url("/images/restaurants/image-1.jpg");
 }
 .menus .card__image-2 {
-  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url("/images/restaurants/image-2.jpg");
 }
 .menus .card__image-3 {
-  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url("/images/restaurants/image-3.jpg");
 }
 .menus .card__image-4 {
-  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url("/images/restaurants/image-4.jpg");
+}
+.menus .card__description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+}
+.menus .card__description h3,
+.menus .card__description p {
+  margin: 0.5rem;
+}
+.menus .card__description h3 {
+  padding-top: 0.5rem;
+}
+.menus .card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menus .card__description .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+}
+.menus .card__description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale 1.2;
+}
+
+footer {
+  background-color: #353535;
+  padding: 1rem 2rem;
+  padding-left: 1.5rem;
+}
+
+footer h2 {
+  font-family: "Shrikhand";
+  font-weight: 500;
+  color: white;
+}
+
+footer p {
+  padding: 0.2rem;
+  color: white;
+}
+
+img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

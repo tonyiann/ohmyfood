@@ -4,7 +4,7 @@
 *,
 ::before,
 ::after {
-    box-sizing: boder-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,5 +13,26 @@ body {
 }
 
 main { 
-    padding: 0 1 rem;
+    padding-bottom: 50px;
+    padding: 0 7rem;
+    background-color: #fafafa;
+    @media (max-width: 1000px) { 
+        padding: 0 1rem;
+     }
 }
+
+h2 {
+    padding: 1rem 0;
+    margin: 0;
+ }
+
+h3,p {
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

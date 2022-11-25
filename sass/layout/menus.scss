@@ -1,6 +1,9 @@
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+@use "../utils/mixins.scss";
+
 .menus {
     background-color: #f6f6f6;
-
     h2 {
         margin-bottom: 2rem;
     }
@@ -9,32 +12,68 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-        @media (max-width: 1000px) { 
-        grid-template-columns:repeat(1, 1fr);
-         }
+        @media  (max-width:1000px) { 
+            grid-template-columns: repeat(1,1fr)           
+        }
+        .new {
+            position: relative;
+        }
+        .new::before {
+            content: "Nouveau";
+            position: absolute;
+            height: 2rem;
+            width: 5rem;
+            background-color: colors.$color-tertiary;
+            color: darken(colors.$color-tertiary, 50%);
+            display: grid;
+            place-items: center;
+            right: 1rem;
+            top: 1rem;
+        }
     }
 
     .card {
-        &__image { 
-        background-image: url("../../images/logo/ohmyfood.png");
-        height: 15rem;
-        border-radius: 1rem;
-        background-size: cover;
+        & .card__image {
+            border-radius: 1rem 1rem 0 0;
+            height: 15rem;
+            background-size: cover;         
         }
-        @for $i from 1 to 4 {
-            
+        @for $i from 1 to 5 {
+            &__image-#{$i} {
+                background-image: url("/images/restaurants/image-#{$i}.jpg");
+            }
         }
-        &__image-1 {
-            background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-        }
-        &__image-2 {
-            background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-        }
-        &__image-3 {
-            background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-        }
-        &__image-4 {
-            background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+        &__description {
+            position: relative;
+            background-color: white;
+            border-radius: 0 0 1rem 1rem;
+
+            h3,
+            p {
+                margin: 0.5rem;
+            }
+            h3 {
+                padding-top: 0.5rem;
+            }
+            i {
+                font-size: 2rem;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .fas {
+                color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                opacity: 0;
+                transition: all 200ms ease-in-out;
+                @include mixins.gradient(1);
+            } 
+            &:hover .fas {
+                opacity: 1;
+                transform: translateY(-50%) scale (1.2);
+            }        
         }
     }
-    }
+}

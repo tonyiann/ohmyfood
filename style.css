@@ -22,12 +22,14 @@ main {
   }
 }
 
-h2 {
-  padding: 1rem 0;
-  margin: 0;
-}
-
-h3, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
   margin: 0;
 }
 
@@ -80,13 +82,13 @@ header {
   border-radius: 2rem;
   transition: transform 200ms;
   margin-top: 1rem;
-  box-shadow: 2px 1px 16px -3px #000000;
+  cursor: pointer;
+  box-shadow: 2px 1px 16px -3px #7e7e7e;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
-.explorerbutton:hover {
+.explorer button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  cursor: pointer;
 }
 
 .tuto {
@@ -145,26 +147,26 @@ header {
   margin-bottom: -5px;
 }
 
-.menus {
+#homepage .menus {
   background-color: #f6f6f6;
 }
-.menus h2 {
+#homepage .menus h2 {
   margin-bottom: 2rem;
 }
-.menus .menus__cards {
+#homepage .menus .menus__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 @media (max-width: 1000px) {
-  .menus .menus__cards {
+  #homepage .menus .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.menus .menus__cards .new {
+#homepage .menus .menus__cards .new {
   position: relative;
 }
-.menus .menus__cards .new::before {
+#homepage .menus .menus__cards .new::before {
   content: "Nouveau";
   position: absolute;
   height: 2rem;
@@ -176,43 +178,43 @@ header {
   right: 1rem;
   top: 1rem;
 }
-.menus .card .card__image {
+#homepage .menus .card .card__image {
   border-radius: 1rem 1rem 0 0;
   height: 15rem;
   background-size: cover;
 }
-.menus .card__image-1 {
+#homepage .menus .card__image-1 {
   background-image: url("/images/restaurants/image-1.jpg");
 }
-.menus .card__image-2 {
+#homepage .menus .card__image-2 {
   background-image: url("/images/restaurants/image-2.jpg");
 }
-.menus .card__image-3 {
+#homepage .menus .card__image-3 {
   background-image: url("/images/restaurants/image-3.jpg");
 }
-.menus .card__image-4 {
+#homepage .menus .card__image-4 {
   background-image: url("/images/restaurants/image-4.jpg");
 }
-.menus .card__description {
+#homepage .menus .card__description {
   position: relative;
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-.menus .card__description h3,
-.menus .card__description p {
+#homepage .menus .card__description h3,
+#homepage .menus .card__description p {
   margin: 0.5rem;
 }
-.menus .card__description h3 {
+#homepage .menus .card__description h3 {
   padding-top: 0.5rem;
 }
-.menus .card__description i {
+#homepage .menus .card__description i {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
 }
-.menus .card__description .fas {
+#homepage .menus .card__description .fas {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -220,7 +222,7 @@ header {
   transition: all 200ms ease-in-out;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.menus .card__description:hover .fas {
+#homepage .menus .card__description:hover .fas {
   opacity: 1;
   transform: translateY(-50%) scale 1.2;
 }
@@ -244,6 +246,144 @@ footer p {
 
 img {
   max-width: 100%;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+#page-resto .banner img {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center bottom;
+}
+#page-resto .resto__title {
+  position: relative;
+  background-color: #f6f6f6;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: -2rem;
+  padding: 0 1rem;
+}
+#page-resto .resto__title h2 {
+  font-family: "Shrikhand", "sans-serif";
+  padding: 2rem 1rem;
+}
+#page-resto h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+#page-resto h3::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  height: 0.25rem;
+  width: 3rem;
+  background-color: #99e2d0;
+}
+#page-resto .menus {
+  background-color: #f6f6f6;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  #page-resto .menus {
+    grid-template-columns: 1fr;
+  }
+}
+#page-resto .menus .menus__category {
+  overflow: hidden;
+}
+#page-resto .menus .menus__category .menu-item {
+  display: flex;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 1rem;
+  background-color: white;
+  box-shadow: 2px 1px 16px -3px #7e7e7e;
+}
+#page-resto .menus .menus__category .menu-item .menu-item__prix {
+  margin-left: auto;
+  font-weight: 900;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+}
+#page-resto .menus .menus__category .menu-item .menu-item_description {
+  padding: 1rem;
+  overflow: hidden;
+}
+#page-resto .menus .menus__category .menu-item .menu-item_description h4,
+#page-resto .menus .menus__category .menu-item .menu-item_description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#page-resto .menus .menus__category .menu-item .menu-item__check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #99e2d0;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+#page-resto .menus .menus__category .menu-item .menu-item__check i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 2rem;
+  border-radius: 1rem;
+  color: #99e2d0;
+}
+#page-resto .menus .menus__category .menu-item:hover {
+  cursor: pointer;
+}
+#page-resto .menus .menus__category .menu-item:hover .menu-item__check {
+  margin-right: 0;
+}
+#page-resto .menus .menus__category .menu-item:hover i {
+  animation: quarter-spin 0.5s ease-in-out;
+}
+@keyframes quarter-spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#page-resto section.order {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+#page-resto section.order button {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 200ms;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 1px 16px -3px #7e7e7e;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+#page-resto section.order button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+#page-resto .resto-main {
+  padding: 0 1rem;
+  background-color: #f6f6f6;
 }
 
 /*# sourceMappingURL=style.css.map */

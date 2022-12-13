@@ -6,6 +6,17 @@ body {
     background-color: colors.$lightergrey;
 }
 #page-resto { 
+
+header::before {
+    @include mixins.font-awesome;
+    content: "\f060";
+    left: 1rem;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-20%);
+    font-size: 20px;
+}
+
 .banner img {
     display: block;
     width: 100%;
@@ -22,11 +33,12 @@ body {
     padding: 0 1rem; 
     h2 {
     font-family: "Shrikhand" , "sans-serif";
-    padding: 2rem 1rem;
+    padding: 2rem 0.4rem;
  }
 }
 
 h3 {
+    left: 17px;
     text-transform: uppercase;
     font-weight: 400;
     position: relative;
@@ -51,13 +63,25 @@ h3 {
     }
    .menus__category {
         overflow: hidden;
+
+
         .menu-item {
+            $numberofitems: 3;
+            @for $i from 1 through $numberofitems {
+                &:nth-child(#{$i}) {
+                      animation-delay: 100ms * $i ;
+                  }
+              }
+            padding-left: 1rem;
+            padding-top: 13px;
             display: flex;
             overflow: hidden;
             border-radius: 1rem;
             margin: 1rem;
             background-color: white;
             @include mixins.base-shadow;
+            animation: appear 1s;
+            animation-fill-mode: both;
             .menu-item__prix {
                 margin-left: auto;
                 font-weight: 900;
@@ -85,8 +109,11 @@ h3 {
                 margin-right: -$button-width;
                 width: $button-width;
                 transition: margin-right 0.5s;
+                margin-top: -1rem;
+                flex-wrap: wrap;
                 i {
                     display: grid;
+                    flex-wrap: wrap;
                     place-items: center;
                     background: white;
                     aspect-ratio: 1;
@@ -118,7 +145,7 @@ section.order {
 }
 
 .resto-main {
-    padding: 0 1rem;
+    padding: 0 0rem;
     background-color: colors.$lightergrey;
 }
 }

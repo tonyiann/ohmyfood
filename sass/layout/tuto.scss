@@ -10,7 +10,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        @media (max-width: 1000px) {
+        @media (max-width: 2000px) {
             flex-direction: column ;
         }
     }

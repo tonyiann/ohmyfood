@@ -12,3 +12,25 @@
     @include mixins.base-button;
 }
 }
+
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
+    opacity: 0.9;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    animation: disappear 200ms 3s forwards;
+    transform-origin: top;
+}
+
+@keyframes disappear {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}

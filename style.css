@@ -91,6 +91,27 @@ header {
   opacity: 0.9;
 }
 
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  opacity: 0.9;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  animation: disappear 200ms 3s forwards;
+  transform-origin: top;
+}
+
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
@@ -100,7 +121,7 @@ header {
   flex-wrap: wrap;
   gap: 1rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 2000px) {
   .tuto ol {
     flex-direction: column;
   }
@@ -203,9 +224,13 @@ header {
 #homepage .menus .card__description h3,
 #homepage .menus .card__description p {
   margin: 0.5rem;
+  margin-top: 0rem;
 }
 #homepage .menus .card__description h3 {
   padding-top: 0.5rem;
+}
+#homepage .menus .card__description p {
+  padding-bottom: 1rem;
 }
 #homepage .menus .card__description i {
   font-size: 2rem;
@@ -225,6 +250,10 @@ header {
 #homepage .menus .card__description:hover .fas {
   opacity: 1;
   transform: translateY(-50%) scale 1.2;
+}
+
+main {
+  padding-bottom: 1.5rem;
 }
 
 footer {
@@ -248,10 +277,36 @@ img {
   max-width: 100%;
 }
 
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 body {
   background-color: #f6f6f6;
 }
 
+#page-resto header::before {
+  position: absolute;
+  display: flex;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  content: "\f060";
+  left: 1rem;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-20%);
+  font-size: 20px;
+}
 #page-resto .banner img {
   display: block;
   width: 100%;
@@ -268,9 +323,10 @@ body {
 }
 #page-resto .resto__title h2 {
   font-family: "Shrikhand", "sans-serif";
-  padding: 2rem 1rem;
+  padding: 2rem 0.4rem;
 }
 #page-resto h3 {
+  left: 17px;
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
@@ -299,12 +355,25 @@ body {
   overflow: hidden;
 }
 #page-resto .menus .menus__category .menu-item {
+  padding-left: 1rem;
+  padding-top: 13px;
   display: flex;
   overflow: hidden;
   border-radius: 1rem;
   margin: 1rem;
   background-color: white;
   box-shadow: 2px 1px 16px -3px #7e7e7e;
+  animation: appear 1s;
+  animation-fill-mode: both;
+}
+#page-resto .menus .menus__category .menu-item:nth-child(1) {
+  animation-delay: 100ms;
+}
+#page-resto .menus .menus__category .menu-item:nth-child(2) {
+  animation-delay: 200ms;
+}
+#page-resto .menus .menus__category .menu-item:nth-child(3) {
+  animation-delay: 300ms;
 }
 #page-resto .menus .menus__category .menu-item .menu-item__prix {
   margin-left: auto;
@@ -332,9 +401,12 @@ body {
   margin-right: -4rem;
   width: 4rem;
   transition: margin-right 0.5s;
+  margin-top: -1rem;
+  flex-wrap: wrap;
 }
 #page-resto .menus .menus__category .menu-item .menu-item__check i {
   display: grid;
+  flex-wrap: wrap;
   place-items: center;
   background: white;
   aspect-ratio: 1;
@@ -382,7 +454,7 @@ body {
   opacity: 0.9;
 }
 #page-resto .resto-main {
-  padding: 0 1rem;
+  padding: 0 0rem;
   background-color: #f6f6f6;
 }
 

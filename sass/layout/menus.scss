@@ -52,9 +52,13 @@
             h3,
             p {
                 margin: 0.5rem;
+                margin-top:0rem;
             }
             h3 {
                 padding-top: 0.5rem;
+            }
+            p {
+                padding-bottom: 1rem;
             }
             i {
                 font-size: 2rem;
@@ -78,4 +82,7 @@
         }
     }
 }
+}
+main {
+    padding-bottom: 1.5rem;
 }

@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0px;
   font-family: "Roboto", sans serif;
@@ -291,6 +295,9 @@ body {
   background-color: #f6f6f6;
 }
 
+#page-resto {
+  overflow-x: hidden;
+}
 #page-resto header::before {
   position: absolute;
   display: flex;
@@ -342,7 +349,7 @@ body {
 }
 #page-resto .menus {
   background-color: #f6f6f6;
-  display: grid;
+  display: block;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
@@ -432,6 +439,7 @@ body {
   }
 }
 #page-resto section.order {
+  margin-top: -2rem;
   height: 30vh;
   display: grid;
   place-items: center;
@@ -456,6 +464,35 @@ body {
 #page-resto .resto-main {
   padding: 0 0rem;
   background-color: #f6f6f6;
+}
+
+.espace {
+  padding-bottom: 2rem;
+}
+
+.coeur {
+  position: relative;
+}
+.coeur i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 1rem;
+  padding-bottom: 7rem;
+}
+.coeur .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+}
+.coeur:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale 1.2;
 }
 
 /*# sourceMappingURL=style.css.map */

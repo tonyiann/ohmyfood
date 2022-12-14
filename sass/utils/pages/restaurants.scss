@@ -6,6 +6,7 @@ body {
     background-color: colors.$lightergrey;
 }
 #page-resto { 
+    overflow-x: hidden;
 
 header::before {
     @include mixins.font-awesome;
@@ -55,7 +56,7 @@ h3 {
 
 .menus {
     background-color: colors.$lightergrey;
-    display: grid;
+    display:block;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     @media (max-width:1000px){
@@ -136,6 +137,7 @@ h3 {
     }
 }
 section.order {
+    margin-top: -2rem;
     height: 30vh;
     display: grid;
     place-items: center;
@@ -148,4 +150,33 @@ section.order {
     padding: 0 0rem;
     background-color: colors.$lightergrey;
 }
+}
+
+.espace { 
+    padding-bottom: 2rem;
+}
+
+.coeur {
+    position: relative;
+    i {
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-right: 1rem;
+        padding-bottom: 7rem;
+    }
+    .fas {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        @include mixins.gradient(1);
+    } 
+    &:hover .fas {
+        opacity: 1;
+        transform: translateY(-50%) scale (1.2);
+    }   
 }

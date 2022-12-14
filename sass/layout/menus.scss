@@ -37,7 +37,8 @@
         & .card__image {
             border-radius: 1rem 1rem 0 0;
             height: 15rem;
-            background-size: cover;         
+            background-size: cover;
+            background-position: center;         
         }
         @for $i from 1 to 5 {
             &__image-#{$i} {

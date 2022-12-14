@@ -24,6 +24,10 @@ header::before {
     height: 30vh;
     object-fit: cover;
     object-position: center bottom;
+    @media  (min-width: 1000px){ 
+        height: 70vh;
+        
+    }
 }
 
 .resto__title {

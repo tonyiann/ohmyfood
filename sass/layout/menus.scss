@@ -42,7 +42,7 @@
         }
         @for $i from 1 to 5 {
             &__image-#{$i} {
-                background-image: url("/images/restaurants/image-#{$i}.jpg");
+                background-image: url("images/restaurants/image-#{$i}.jpg");
             }
         }
         &__description {

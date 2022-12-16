@@ -110,6 +110,7 @@ header {
   z-index: 1;
   animation: disappear 200ms 3s forwards;
   transform-origin: top;
+  color: #9356dc;
 }
 
 @keyframes disappear {
@@ -260,7 +261,7 @@ header {
 }
 #homepage .menus .card__description:hover .fas {
   opacity: 1;
-  transform: translateY(-50%) scale 1.2;
+  transform: scale(1.1) translateY(-50%);
 }
 
 main {
@@ -295,6 +296,18 @@ img {
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes menu-load {
+  0% {
+    transform: translateY(20px);
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0);
     opacity: 1;
   }
 }
@@ -450,6 +463,30 @@ body {
     transform: rotate(0);
   }
 }
+@keyframes menu-load {
+  0% {
+    transform: translateY(20px);
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+#page-resto .menus .menus__category:nth-of-type(1) {
+  animation: menu-load 800ms 200ms forwards;
+}
+#page-resto .menus .menus__category:nth-of-type(2) {
+  animation: menu-load 800ms 400ms forwards;
+}
+#page-resto .menus .menus__category:nth-of-type(3) {
+  animation: menu-load 800ms 600ms forwards;
+}
+#page-resto .menus .menus__category:nth-of-type(4) {
+  animation: menu-load 800ms 800ms forwards;
+}
 #page-resto section.order {
   margin-top: -2rem;
   height: 30vh;
@@ -490,7 +527,7 @@ body {
   position: absolute;
   right: 1rem;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-59%);
   padding-right: 1rem;
   padding-bottom: 7rem;
 }
@@ -504,7 +541,7 @@ body {
 }
 .coeur:hover .fas {
   opacity: 1;
-  transform: translateY(-50%) scale 1.2;
+  transform: scale(1.1) translateY(-50%);
   cursor: pointer;
 }
 

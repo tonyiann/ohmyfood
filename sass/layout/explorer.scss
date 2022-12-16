@@ -1,4 +1,5 @@
 @use "../utils/mixins";
+@use "../utils/colors.scss";
 .explorer {
     text-align: center;
     & h2 {
@@ -25,6 +26,7 @@
     z-index: 1;
     animation: disappear 200ms 3s forwards;
     transform-origin: top;
+    color: colors.$purple;
 }
 
 @keyframes disappear {

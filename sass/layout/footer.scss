@@ -4,17 +4,47 @@ footer {
     background-color: #353535;
     padding: 1rem 2rem;
     padding-left: 1.5rem;
+    
 }
 footer h2 {
     font-family: "Shrikhand";
     font-weight: 500;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 footer p {
     padding: 0.2rem;
     color: white;
+    margin: 3px;
 }
 img {
     max-width: 100%;
+}
+footer a {
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+}
+footer .partenaires {
+    margin-left: 0px;
+    display: flex;
+}
+footer .fa-hands-helping {
+    margin-left: 0px;
+}
+footer .fas {
+    margin-left: -7px;
+    font-size: 13px;
+} 
+footer .sous-partenaires {
+    margin-top: 5px;
+    margin-left: -6px;
+}
+footer .mentions {
+    margin-left: -3px;
+}
+footer .contact {
+    margin-left: -13px;
+
 }

@@ -210,3 +210,36 @@ section.order {
         cursor: pointer;
     }   
 }
+.card_text_title {
+    width: 100%;
+    margin-bottom: 0;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 40px;
+  }
+  .card_text_title p {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 3px;
+    font-family: "Roboto Slab", sans-serif;
+    color: black;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.2;
+ }  
+ .card_text_description {
+    width: 100%;
+  }
+  .card_text_description p {
+    font-size: 14px;
+    font-family: "Roboto Slab", sans-serif;
+    color: grey;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.2;
+    margin-top: -17px;
+  }
+  
